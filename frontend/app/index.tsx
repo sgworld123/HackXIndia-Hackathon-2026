@@ -122,23 +122,23 @@ export default function SetLocationScreen() {
   };
 
   const handleConfirm = () => {
+  //place mode - just go back
   if (isPlaceMode) {
-    router.replace(returnTo || "/frequent-places");
-    return;
-  }
+      router.replace(returnTo || "/frequent-places");
+      return;
+    }
 
-  // ✅ PICK MODE
-  router.replace({
-    pathname: returnTo || "/frequent-places",
-    params: {
-      latitude: String(region.latitude),
-      longitude: String(region.longitude),
-    },
-  });
-};
-
-
-
+    //save previous city
+    savePreviousCity();
+    // ✅ PICK MODE
+    router.replace({
+      pathname: returnTo || "/frequent-places",
+      params: {
+        latitude: String(region.latitude),
+        longitude: String(region.longitude),
+      },
+    });
+  };
 
   return (
     <View style={styles.container}>
