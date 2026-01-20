@@ -159,6 +159,7 @@ const styles = StyleSheet.create({
     top: Platform.OS === "ios" ? 40 : 20,
     width: "90%",
     alignSelf: "center",
+    borderRadius: 28,
     zIndex: 15,
   },
 
