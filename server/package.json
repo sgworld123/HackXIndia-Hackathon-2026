@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Hackathon Project",
+  "keywords": [
+    "Hack",
+    "HackXIndia"
+  ],
+  "license": "ISC",
+  "author": "Code_Assasins",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "openai": "^6.16.0",
+    "prettier": "^3.8.0"
+  }
+}
