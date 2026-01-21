@@ -12,7 +12,7 @@ The system combines **geospatial distance analysis**, **Google Places data**, an
   https://your-frontend-link.com
 
 - 🎥 **Video Demo (Walkthrough + Explanation)**  
-  https://your-video-demo-link.com
+  https://drive.google.com/file/d/1L24Uv981x_W-3gZUd3rcpYDEhkRxjX1h/view?usp=drive_link
 
 - 📦 **GitHub Repository**  
   https://github.com/rishabh1230/HackXIndia-Hackathon-2026
