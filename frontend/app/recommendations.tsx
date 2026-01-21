@@ -23,12 +23,14 @@ const getSimilarityPercentage = (item: any) => {
 export default function recommendations() {
   const [places, setPlaces] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const prepareAndSendPayload = async () => {
       try {
         // 1️⃣ Read from AsyncStorage
         setLoading(true);
+        setError(null);
         const [
           storedPrevCity,
           storedCurrCity,
@@ -74,7 +76,7 @@ export default function recommendations() {
         console.log("Sending payload:", JSON.stringify(payload, null, 2));
 
         // 3️⃣ Send to backend
-        const response = await fetch("http://nami-hdya.onrender.com/api/recommend", {
+        const response = await fetch("https://nami-hdya.onrender.com/api/recommend", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
@@ -109,9 +111,16 @@ export default function recommendations() {
             }))
           ) ?? [];
 
+        if (extracted.length === 0) {
+          setError("No recommendations found.");
+        }
+
         setPlaces(extracted);
-      } catch (error) {
-        console.error("Error preparing payload:", error);
+      } catch (error: any) {
+        console.error("Error:", error);
+        // Show an alert so you can debug in production
+        alert(`Error fetching data: ${error.message}`);
+        setError("Failed to load recommendations. Please try again.");
       }
       finally {
         setLoading(false);
@@ -126,6 +135,17 @@ export default function recommendations() {
       <View style={styles.center}>
         <ActivityIndicator size="large" color="#4F46E5" />
         <Text style={styles.loadingText}>Finding best places for you…</Text>
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={styles.center}>
+        <Text style={{ color: 'red', fontSize: 16 }}>{error}</Text>
+        <TouchableOpacity onPress={() => router.back()} style={[styles.button, { marginTop: 20 }]}>
+          <Text style={styles.buttonText}>Go Back</Text>
+        </TouchableOpacity>
       </View>
     );
   }

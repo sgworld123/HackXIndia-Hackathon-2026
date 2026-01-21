@@ -27,15 +27,23 @@ export default function TargetCity() {
   });
 
   const saveCurrentCity = async () => {
-    const cityName = await getCityFromCoord(region.latitude, region.longitude);
+    const city = await getCityFromCoord(
+      region.latitude,
+      region.longitude
+    );
+
     try {
-      await AsyncStorage.setItem("current_city", JSON.stringify({
-        name: cityName,
-        coordinates: {
-          lat: region.latitude,
-          lng: region.longitude,
-        },
-      }));
+      await AsyncStorage.setItem(
+        "current_city",
+        JSON.stringify({
+          name: city.name,
+          level: city.level,
+          coordinates: {
+            lat: region.latitude,
+            lng: region.longitude,
+          },
+        })
+      );
       console.log("✅ SAVED current_city:", region.latitude, region.longitude);
     } catch (error) {
       console.error("❌ Storage error:", error);
@@ -57,10 +65,12 @@ export default function TargetCity() {
     mapRef.current?.animateToRegion(newRegion, 800);
   };
 
-  const handleConfirm = () => {
-    saveCurrentCity();
+  const handleConfirm = async () => {
+    setLoading(true);
+    await saveCurrentCity();
+    setLoading(false);
     router.push('/recommendations');
-  }
+  };
 
   return (
     <View style={styles.container}>
