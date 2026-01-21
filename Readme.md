@@ -1,3 +1,8 @@
+#  Team Name- Code_Assasins
+  Shreyansh Gupta/
+  Rishabh Pandey/
+  Nitin Chugh/
+  Nishkarsh Pandey/
 # 🌍 MoveWise — Smart Relocation-Based Place Recommendation System
 
 MoveWise is an intelligent, AI-powered application that helps users seamlessly adapt to a new city by recommending places (gyms, cafes, hospitals, restaurants, etc.) that closely match the places they already trust in their previous city.
