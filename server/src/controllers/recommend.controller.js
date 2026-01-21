@@ -1,6 +1,6 @@
 import { SUPPORTED_PLACE_TYPES } from "../constants.js";
 import { resolveSourcePlace } from "../services/recommendation.service.js";
-import { getDrivingDistanceWithTraffic } from "./services/distanceMatrix.service.js";
+import { getDrivingDistanceWithTraffic } from "../services/distanceMatrix.service.js";
 import {
   findNearbyPlacesByTypeAtLocation,
   getPlaceDetails

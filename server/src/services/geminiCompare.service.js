@@ -44,7 +44,7 @@ const extractGeminiText = (result) => {
 };
 
 /* ----------------------------------------------------
-   Gemini review-based comparison
+   Gemini review-based comparison this is the core logical comparision on what basis the pros and cons are generated
 ---------------------------------------------------- */
 const getGeminiReviewComparison = async (
   source,
