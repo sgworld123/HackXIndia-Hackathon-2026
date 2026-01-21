@@ -14,7 +14,7 @@ The system combines **geospatial distance analysis**, **Google Places data**, an
 ## 🔗 Important Links
 
 - 📱 **App Demo (Download APK)**  
-  https://expo.dev/artifacts/eas/fS6B3pVQL5zvmf5SZXSMKh.apk
+  https://expo.dev/artifacts/eas/8LHXFDYxg21jmTDW99r5M3.apk
 
 - 🎥 **Video Demo (Walkthrough + Explanation)**  
   https://drive.google.com/file/d/1L24Uv981x_W-3gZUd3rcpYDEhkRxjX1h/view?usp=drive_link
